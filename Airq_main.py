@@ -1,4 +1,4 @@
-#import regression_lab.polynomial_regression as polynomial_regression
+import regression_lab.polynomial_regression as reg
 
 import numpy as np
 from sklearn.linear_model import LinearRegression
@@ -7,9 +7,14 @@ import matplotlib.pyplot as plt
 import pylab
 
 import pandas as pd
+from clean_dat import df,head,data,drop
 
-df = pd.read_csv('AirQualityUCI.csv', sep=';',header=None)
-df = df.dropna(axis=1)
+y = np.array(data[13]).astype(float)
+y = drop(y)
+y = np.reshape(y,(-1,24))
+print(np.shape(y))
 
-df_n = df.to_numpy()
-df_nc = lambda col: df[col].to_numpy()
+plt.ylabel('C O')
+#plt.scatter(np.arange(len(y)),y , vmin=0,vmax= 2)
+reg.regression_plot(np.arange(len(y)), y, degree = 70)
+plt.show()
