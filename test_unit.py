@@ -1,3 +1,4 @@
+#%%
 import regression_lab.polynomial_regression as reg
 
 import numpy as np
@@ -7,8 +8,19 @@ import matplotlib.pyplot as plt
 import pylab
 
 import pandas as pd
-#from clean_dat import df,head,data,drop
+from clean_dat import df
 
-#plt.scatter([1,2,3,4] , [1,2,None,4])
-reg.regression_plot(np.array([1,2,3,4]) , np.array([1,2,None,4]))
-plt.show()
+#%%
+print(df)
+#%%
+t_data = pd.DataFrame()
+cur_d = df['Time'][0].day
+for d in df.index:
+        if df['Time'][d].day == cur_d :
+            pass
+        else:
+            cur_d = df['Time'][d].day
+            pass
+        
+    # %%
+print(datetime.date.today())
