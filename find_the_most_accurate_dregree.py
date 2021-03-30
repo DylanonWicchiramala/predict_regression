@@ -10,10 +10,12 @@ for deg in range(1, 50):
         pxi = reg.regrassion_predict(dat.X1[i], dat.X1, dat.Y, degree=deg)
         yi = dat.Y[i]
         sum += (pxi - yi)**2
-        
+
     print(" dregree " + str(deg) + " : " + str(sum))
-    if sum < minEx : minEx = sum ; mindrg = deg
-    #elif sum > minEx : break
-    
+    if sum < minEx:
+        minEx = sum
+        mindrg = deg
+    # elif sum > minEx : break
+
 print("most accurate dregree is " + str(mindrg))
 print(" Ex : " + str(minEx))
