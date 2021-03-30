@@ -24,3 +24,14 @@ for d in df.index:
         
     # %%
 print(datetime.date.today())
+
+#%%
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+ax.scatter3D(X1,X2,Y)
+plt.show()
+
+#%%
+n = np.array([0,1,2,3])
+print(n[:-3])
+# %%
