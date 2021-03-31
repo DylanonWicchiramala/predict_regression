@@ -8,18 +8,18 @@ import matplotlib.pyplot as plt
 import pylab
 
 import pandas as pd
-from clean_dat import df
+from clean_dat import data_frame
 
 #%%
-print(df)
+print(data_frame)
 #%%
 t_data = pd.DataFrame()
-cur_d = df['Time'][0].day
-for d in df.index:
-        if df['Time'][d].day == cur_d :
+cur_d = data_frame['Time'][0].day
+for d in data_frame.index:
+        if data_frame['Time'][d].day == cur_d :
             pass
         else:
-            cur_d = df['Time'][d].day
+            cur_d = data_frame['Time'][d].day
             pass
         
     # %%
