@@ -1,37 +1,16 @@
 #%%
 import regression_lab.polynomial_regression as reg
-
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 import matplotlib.pyplot as plt
-import pylab
-
 import pandas as pd
-from clean_dat import data_frame
+from data import X1,X2,Y,data_frame
+
 
 #%%
-print(data_frame)
-#%%
-t_data = pd.DataFrame()
-cur_d = data_frame['Time'][0].day
-for d in data_frame.index:
-        if data_frame['Time'][d].day == cur_d :
-            pass
-        else:
-            cur_d = data_frame['Time'][d].day
-            pass
-        
-    # %%
-print(datetime.date.today())
-
-#%%
-fig = plt.figure()
-ax = plt.axes(projection='3d')
-ax.scatter3D(X1,X2,Y)
-plt.show()
-
-#%%
-n = np.array([0,1,2,3])
-print(n[:-3])
+##cof
+w1 = str((reg.regrassion_predict(24,X1, Y, degree=1) - reg.regrassion_predict(0,X1, Y, degree=1)) / (24-0))
+w0 = str(reg.regrassion_predict(0,X1, Y, degree=1))
+print('y = ' + w1 + 'x + ' + w0)
 # %%

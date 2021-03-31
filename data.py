@@ -27,3 +27,13 @@ data_frame["Time"] = pd.to_datetime(
 data_frame = data_frame.drop("Date", axis=1)
 
 
+# %%
+col = 'CO(GT)'
+min = -365
+max = None
+# delete not available data.
+df_new = dropnull(data_frame, col)
+# time in 24hrs.
+X1 = np.array([i.hour for i in df_new["Time"][min:max]])
+
+Y = np.array(df_new[col][min:max])

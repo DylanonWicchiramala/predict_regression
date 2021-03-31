@@ -1,0 +1,9 @@
+import regression_lab.polynomial_regression as reg
+from data import col,X1,Y
+#%%
+##predict
+inp = input("time : ")
+time = str(inp)
+time = float(time.split('.')[0]) + float(time.split('.')[1])/60
+print(str(col) + ' at ' + str(time)+ ' o\'clock : '+ str(reg.regrassion_predict(time,X1, Y, degree=12)))
+
