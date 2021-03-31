@@ -1,7 +1,6 @@
 from clean_dat import data_frame, dropnull  
 import regression_lab.polynomial_regression as reg
 import numpy as np
-import Airq_main as ddddddddddddddd
 
 # find the most accurate dregree by least squre method
 
@@ -13,7 +12,7 @@ col = 'CO(GT)'
 min = -350
 max = None
 # delete not available data.
-df_new = dropnull(df, col)
+df_new = dropnull(data_frame, col)
 # time in 24hrs.
 X1 = np.array([i.hour for i in df_new["Time"][min:max]])
 # time in one year
