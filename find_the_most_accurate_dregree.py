@@ -9,7 +9,7 @@ import numpy as np
 # least squre formula -> minEx = min(sum(yi - P^deg(xi))^2 for deg [1-50])
 
 col = 'CO(GT)'
-min = -350
+min = -365
 max = None
 # delete not available data.
 df_new = dropnull(data_frame, col)
@@ -22,7 +22,7 @@ Y = np.array(df_new[col][min:max])
 
 minEx = float('inf')
 # loop through degree.
-for current_degree in range(1, 50):
+for current_degree in range(1, 25):
     sum = 0
     # Iterating over data.
     for i in range(len(X1)):

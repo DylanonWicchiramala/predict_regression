@@ -6,7 +6,7 @@ from clean_dat import data_frame, dropnull
 
 # %%
 col = 'CO(GT)'
-min = -350
+min = None
 max = None
 # delete not available data.
 df_new = dropnull(data_frame, col)
@@ -27,7 +27,20 @@ plt.scatter(X1, Y, color="black")
 reg.regression_plot(X1, Y, degree=1, margin=0)
 # polynomial regresstion plot
 reg.regression_plot(X1, Y, degree=12, margin=0)
+#%%
 plt.show()
+#%%
+print(reg.regrassion_predict(input("time : "),X1, Y, degree=12))
+
+#%%
+w1 = str((reg.regrassion_predict(24,X1, Y, degree=1) - reg.regrassion_predict(0,X1, Y, degree=1)) / (24-0))
+w0 = str(reg.regrassion_predict(0,X1, Y, degree=1))
+print('y = ' + w1 + 'x + ' + ))
+
+
+
+
+
 
 
 
