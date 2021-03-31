@@ -16,6 +16,7 @@ X1 = np.array([i.hour for i in df_new["Time"][min:max]])
 Y = np.array(df_new[col][min:max])
 
 #%%
+
 plt.figure(1)
 plt.title(col)
 plt.xlabel("time(24hrs)")
