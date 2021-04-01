@@ -5,9 +5,14 @@ import pylab
 import datetime
 import pandas as pd
 
+
+#import data from csv file
+data_frame = pd.read_csv('AirQualityUCI.csv', sep=';',).dropna(axis=1)
+data_frame["Time"] = pd.to_datetime(
+    data_frame['Date']+data_frame['Time'][:], format="%d/%m/%Y%H.%M.%S")
+data_frame = data_frame.drop("Date", axis=1)
+
 # delete not available data.
-
-
 def dropnull(df, col=None):
     ind = []
     if col is None:
@@ -19,13 +24,6 @@ def dropnull(df, col=None):
             if df[col][i] == -200:
                 ind.append(i)
     return df.drop(ind)
-
-#import data from csv file
-data_frame = pd.read_csv('AirQualityUCI.csv', sep=';',).dropna(axis=1)
-data_frame["Time"] = pd.to_datetime(
-    data_frame['Date']+data_frame['Time'][:], format="%d/%m/%Y%H.%M.%S")
-data_frame = data_frame.drop("Date", axis=1)
-
 
 # %%
 col = 'CO(GT)'
