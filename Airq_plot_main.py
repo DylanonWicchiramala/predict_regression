@@ -3,7 +3,7 @@ import regression_lab.polynomial_regression as reg
 import numpy as np
 import matplotlib.pyplot as plt
 from data import col,X1,Y
-
+from regression_lab.most_accurate_dregree import most_acc_deg
 
 #%%
 ##plot
